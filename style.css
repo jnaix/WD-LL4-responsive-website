@@ -1,3 +1,12 @@
+/* Color palette for the website */
+:root {
+  --jonquil: #ffc907;
+  --apricot: #fed8c1;
+  --brown-sugar: #b65f39;
+  --eerie-black: #1a1a1a;
+  --cosmic-latte: #fef6e0;
+}
+
 /*
   Main styles for Charity: Water demo site
   These styles are simple and beginner-friendly.
@@ -6,17 +15,19 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffe3d3; /* Light peach background */
+  background-color: var(--apricot); /* Light peach background */
+  color: var(--eerie-black); /* Use dark text for readability */
 }
 
 /* Header styles */
 header {
-  background-color: #ffe3d3;
+  background-color: var(--cosmic-latte);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  border-bottom: 2px solid #f0c49c;
+  border-bottom: 2px solid var(--jonquil);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* subtle shadow for depth */
 }
 
 /* Logo styles */
@@ -24,23 +35,30 @@ header {
   display: flex;
   align-items: center;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.3em; /* slightly larger */
+  color: var(--brown-sugar);
 }
 
 .logo img {
-  width: 30px;
-  margin-right: 10px;
+  width: 36px; /* slightly larger */
+  margin-right: 12px;
 }
 
 /* Navigation button styles */
 nav button {
   margin-left: 10px;
-  background-color: #ffd000;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  background-color: var(--jonquil);
+  border: 2px solid var(--brown-sugar);
+  padding: 10px 18px;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  color: var(--eerie-black);
+  transition: background 0.2s, color 0.2s;
+}
+nav button:hover {
+  background-color: var(--brown-sugar);
+  color: var(--cosmic-latte);
 }
 
 /* Hero section styles */
@@ -50,7 +68,7 @@ nav button {
   background-size: cover;
   background-position: center;
   color: white;
-  height: 500px;
+  height: 400px; /* slightly shorter for balance */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,21 +76,24 @@ nav button {
 }
 
 .hero-text {
-  background-color: rgba(255, 208, 0, 0.9);
-  color: black;
-  padding: 20px;
-  border-radius: 20px;
-  max-width: 400px;
-  font-size: 1.5em;
+  background-color: rgba(255, 201, 7, 0.92); /* jonquil with transparency */
+  color: var(--eerie-black);
+  padding: 24px;
+  border-radius: 24px;
+  max-width: 420px;
+  font-size: 1.6em;
   font-weight: bold;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
 }
 
 .subtext {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: bold;
+  color: var(--cosmic-latte);
+  text-shadow: 1px 1px 4px var(--eerie-black);
 }
 
 /* Call to action section */
@@ -84,26 +105,32 @@ nav button {
 }
 
 .cta-box {
-  background-color: #cc6a4d;
-  color: white;
-  padding: 20px;
-  border-radius: 15px;
+  background-color: var(--brown-sugar);
+  color: var(--cosmic-latte);
+  padding: 24px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 85%;
   max-width: 700px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
 .cta-box button {
-  margin-left: 20px;
-  background-color: #ffd000;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  margin-left: 24px;
+  background-color: var(--jonquil);
+  color: var(--eerie-black);
+  border: 2px solid var(--cosmic-latte);
+  padding: 12px 24px;
+  border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-box button:hover {
+  background-color: var(--cosmic-latte);
+  color: var(--brown-sugar);
 }
 
 /* Responsive styles for small screens */
@@ -116,5 +143,43 @@ nav button {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    padding: 16px;
+  }
+  .cta-box button {
+    margin-left: 0;
+    margin-top: 12px;
+    width: 100%;
+  }
+}
+
+/* Responsive Navbar Styles */
+.navbar-toggle {
+  display: none;
+  background: var(--jonquil);
+  border: 2px solid var(--brown-sugar);
+  color: var(--eerie-black);
+  font-size: 1.5em;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  nav button {
+    display: none;
+    width: 100%;
+    margin: 8px 0 0 0;
+  }
+  .navbar-toggle {
+    display: block;
+  }
+  nav.open button {
+    display: block;
   }
 }
