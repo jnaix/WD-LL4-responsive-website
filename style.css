@@ -1,52 +1,120 @@
+/*
+  Main styles for Charity: Water demo site
+  These styles are simple and beginner-friendly.
+*/
+
 body {
-  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffe3d3; /* Light peach background */
 }
 
-section {
+/* Header styles */
+header {
+  background-color: #ffe3d3;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid #f0c49c;
+}
+
+/* Logo styles */
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.logo img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* Navigation button styles */
+nav button {
+  margin-left: 10px;
+  background-color: #ffd000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Hero section styles */
+.hero {
+  position: relative;
+  background-image: url('placeholder-hero.jpg'); /* Placeholder image */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 500px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  text-align: left;
 }
 
-h1 {
-  color: #BAF2E9;
-}
-
-/* Navbar styles for beginners */
-nav {
-  display: flex; /* Places items in a row */
-  justify-content: space-between; /* Space between title and links */
-  align-items: center; /* Vertically center items */
-  background-color: #333; /* Dark background */
-  padding: 10px 20px; /* Space inside navbar */
-}
-
-.nav-title {
-  color: #fff; /* White text for title */
-  font-size: 1.5em; /* Larger font for title */
+.hero-text {
+  background-color: rgba(255, 208, 0, 0.9);
+  color: black;
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 400px;
+  font-size: 1.5em;
   font-weight: bold;
 }
 
-.nav-links {
-  list-style: none; /* Removes bullet points */
-  margin: 0;
-  padding: 0;
-  display: flex; /* Places links in a row */
-}
-
-.nav-links li {
-  margin-left: 20px; /* Space between links */
-}
-
-.nav-links a {
-  color: #fff; /* White text for links */
-  text-decoration: none; /* Removes underline */
+.subtext {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
   font-size: 1em;
-  transition: color 0.2s; /* Smooth color change on hover */
+  font-weight: bold;
 }
 
-.nav-links a:hover {
-  color: #BAF2E9; /* Light blue on hover */
+/* Call to action section */
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.cta-box {
+  background-color: #cc6a4d;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 700px;
+}
+
+.cta-box button {
+  margin-left: 20px;
+  background-color: #ffd000;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+  .hero-text {
+    font-size: 1.2em;
+    padding: 15px;
+  }
+  .cta-box {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
 }
