@@ -88,11 +88,26 @@ nav a:hover {
   color: white;
   height: 625px; /* longer because of visuals */
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start; /* Move content to the top */
+  justify-content: flex-start; /* Move content to the left */
   text-align: left;
+  /* Remove margins and width for centering */
+  margin: 60px 0 0 0; /* Only move down, not to the left */
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* Group hero text and subtext at the bottom left */
+.hero-bottom-left {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Move the hero text to the top left inside the hero section */
 .hero-text {
   background-color: rgba(255, 201, 7, 0.92); /* jonquil with transparency */
   color: var(--eerie-black);
@@ -102,13 +117,17 @@ nav a:hover {
   font-size: 1.6em;
   font-weight: bold;
   box-shadow: 0 4px 16px rgba(0,0,0,0.07);
-  align-items: left;
+  /* Move text down and to the left */
+  align-self: flex-start; /* Align to the left in the flex container */
+  bottom: 20px; /* Space from the top */
+  left: 20px;
+  margin-left: 40px; /* Space from the left */
+  margin: 0 0 10px 0; /* Space between hero-text and subtext */
 }
 
 .subtext {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+  position: static;
+  margin: 0;
   font-size: 1.1em;
   font-weight: bold;
   color: var(--cosmic-latte);
@@ -157,6 +176,9 @@ nav a:hover {
 /* Responsive styles for small screens */
 @media (max-width: 600px) {
   .hero-text {
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-top: 0;
     font-size: 1.2em;
     padding: 15px;
   }
@@ -210,5 +232,17 @@ nav a:hover {
   }
   nav.open a {
     display: block;
+  }
+  .hero {
+    margin: 0;
+    width: 100%;
+  }
+  .hero-bottom-left {
+    left: 10px;
+    bottom: 10px;
+  }
+  .hero-text {
+    font-size: 1.2em;
+    padding: 15px;
   }
 }
