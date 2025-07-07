@@ -61,6 +61,24 @@ nav button:hover {
   color: var(--cosmic-latte);
 }
 
+/* Navigation link styles (make links look like buttons) */
+nav a {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: var(--jonquil);
+  border: 2px solid var(--brown-sugar);
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: var(--eerie-black);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+nav a:hover {
+  background-color: var(--brown-sugar);
+  color: var(--cosmic-latte);
+}
+
 /* Hero section styles */
 .hero {
   position: relative;
@@ -176,10 +194,18 @@ nav button:hover {
     width: 100%;
     margin: 8px 0 0 0;
   }
+  nav a {
+    display: none;
+    width: 100%;
+    margin: 8px 0 0 0;
+  }
   .navbar-toggle {
     display: block;
   }
   nav.open button {
+    display: block;
+  }
+  nav.open a {
     display: block;
   }
 }
